@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: spring-ai-openrouter
+  ai:
+    openai:
+      # API key diambil dari environment variable OPENROUTER_API_KEY
+      api-key: ${OPENROUTER_PROD_KEY}
+      # Arahkan base-url ke OpenRouter
+      base-url: https://openrouter.ai/api/v1
+      chat:
+        options:
+          # Ganti model sesuai kebutuhan; contoh model gratis di OpenRouter biasanya berakhiran :free
+          # Cth: qwen/qwen-2.5-7b-instruct:free (sesuaikan dengan daftar model terkini)
+          model: openai/gpt-oss-20b:free
