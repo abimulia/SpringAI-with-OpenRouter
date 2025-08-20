@@ -1,14 +1,15 @@
 spring:
   application:
     name: spring-ai-openrouter
+    version: 1.0.0
   ai:
     openai:
-      # API key diambil dari environment variable OPENROUTER_API_KEY
+      # API key from environment variable OPENROUTER ${OPENROUTER_PROD_KEY}  GROQ ${GROQ_SPRING_API_KEY}
       api-key: ${OPENROUTER_PROD_KEY}
-      # Arahkan base-url ke OpenRouter
-      base-url: https://openrouter.ai/api/v1
+      # base-url for OpenRouter https://openrouter.ai/api GROQ https://api.groq.com/openai
+      base-url: https://openrouter.ai/api
       chat:
         options:
-          # Ganti model sesuai kebutuhan; contoh model gratis di OpenRouter biasanya berakhiran :free
-          # Cth: qwen/qwen-2.5-7b-instruct:free (sesuaikan dengan daftar model terkini)
+          # Change model according to your plan; for free model in OpenRouter usually end with :free
+          # OpenRouter free models qwen/qwen3-coder:free qwen/qwen3-4b:free openai/gpt-oss-20b:free deepseek/deepseek-r1-0528:free (change according to the latest model see https://openrouter.ai/models)
           model: openai/gpt-oss-20b:free
